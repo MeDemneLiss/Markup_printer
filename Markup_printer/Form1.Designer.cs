@@ -31,6 +31,7 @@ namespace Markup_printer
             добавитьСтолбецToolStripMenuItem = new ToolStripMenuItem();
             удалитьСтолбецToolStripMenuItem = new ToolStripMenuItem();
             изменитьДанныеToolStripMenuItem = new ToolStripMenuItem();
+            info = new ToolStripMenuItem();
             comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -42,8 +43,10 @@ namespace Markup_printer
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = SystemColors.MenuText;
             dataGridView1.Location = new Point(1, 27);
+            dataGridView1.MaximumSize = new Size(2000, 500);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.ScrollBars = ScrollBars.Horizontal;
             dataGridView1.Size = new Size(1044, 191);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellContentClick;
@@ -53,10 +56,10 @@ namespace Markup_printer
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, столбцыToolStripMenuItem, изменитьДанныеToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, столбцыToolStripMenuItem, изменитьДанныеToolStripMenuItem, info });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1039, 24);
+            menuStrip1.Size = new Size(1057, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -116,6 +119,13 @@ namespace Markup_printer
             изменитьДанныеToolStripMenuItem.Text = "Изменить данные";
             изменитьДанныеToolStripMenuItem.Click += Date_Open_Click;
             // 
+            // info
+            // 
+            info.Name = "info";
+            info.Size = new Size(93, 20);
+            info.Text = "Информация";
+            info.Click += InfoMenuItem_Click;
+            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
@@ -131,14 +141,15 @@ namespace Markup_printer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1039, 228);
+            ClientSize = new Size(1057, 243);
             Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.AppWorkspace;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            MinimumSize = new Size(100, 25);
+            MaximumSize = new Size(2020, 550);
+            MinimumSize = new Size(30, 25);
             Name = "Form1";
             Text = "Markup_printer";
             FormClosing += The_Closed;
@@ -163,5 +174,6 @@ namespace Markup_printer
         private ToolStripMenuItem удалитьСтолбецToolStripMenuItem;
         private ToolStripMenuItem изменитьДанныеToolStripMenuItem;
         public ComboBox comboBox1;
+        private ToolStripMenuItem info;
     }
 }

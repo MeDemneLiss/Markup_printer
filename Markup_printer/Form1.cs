@@ -129,9 +129,9 @@ namespace Markup_printer
             comboBox1.Visible = false;
             if (dataGridView1.ColumnCount < 20)
             {
-                dataGridView1.ColumnCount += 1;
                 Width += 100;
                 dataGridView1.Width = Width;
+                dataGridView1.ColumnCount += 1;
             }
             dataGridView1.Columns[dataGridView1.ColumnCount - 1].SortMode = DataGridViewColumnSortMode.NotSortable;
         }
@@ -212,6 +212,11 @@ namespace Markup_printer
             {
                 e.Cancel = true;
             }
+        }
+
+        private void InfoMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Руководство по использованию:\n1. В пункте меню 'Файл'\n\t1.1 Сохранитиь - осуществляет выгрузку в формате txt файла с сформированного из значений таблицы в определенном формате\n\tВАЖНО! значения для каждой строки записываются до тех пор пока не встретят пустую ячейку, поэтому в строке пропусков быть не должно\n\t1.2 Открыть - открывает файл txt для дальнейшего редактирования в таблице(для сохранения файла используйте кнопку 'Сохранить'\n\t1.3 Создать новый - создает пустую таблицу 10х10\n2. Столбцы - Добавляет/удаляет столбец в конце таблицы \n3. Изменить данные - открывает форму для добавления/удаления слов в список выбора, чтобы сохранить изменения закройте окно и нажмите 'Да'\n\n\n\n\nПо вопросам и ОС - Asamsakov@mail.ru", "О программе", MessageBoxButtons.OK);
         }
     }
 }
